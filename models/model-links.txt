@@ -1,0 +1,7 @@
+V1 MODEL 
+https://teachablemachine.withgoogle.com/models/-srVGQve0/
+
+V2 MODEL
+https://teachablemachine.withgoogle.com/models/WRjiyFqYc/ 
+
+

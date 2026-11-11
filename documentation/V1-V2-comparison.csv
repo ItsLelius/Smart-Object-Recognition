@@ -1,0 +1,37 @@
+﻿Test_ID,Condition,Actual_Class,Image_Filename,V1_Predicted,V1_Confidence_%,V1_Result,V2_Predicted,V2_Confidence_%,V2_Result,Change
+T01,Upright,PAPER,01-paper [upright],PAPER,100,Correct,PAPER,100,Correct,Same (correct)
+T02,Rotated 90°,PAPER,01-paper [rot90],PAPER,100,Correct,PAPER,100,Correct,Same (correct)
+T03,Rotated 180°,PAPER,01-paper [rot180],PAPER,100,Correct,PAPER,100,Correct,Same (correct)
+T04,Low lighting,PAPER,01-paper [dark],PAPER,100,Correct,PAPER,100,Correct,Same (correct)
+T05,Complex background,PAPER,01-paper [busy],PAPER,98.9,Correct,PAPER,96.8,Correct,Same (correct)
+T06,Increased distance,PAPER,01-paper [far],PAPER,99.5,Correct,PAPER,98.4,Correct,Same (correct)
+T07,Upright,PAPER,02-paper [upright],PAPER,93.9,Correct,PAPER,98,Correct,Same (correct)
+T08,Rotated 90°,PAPER,02-paper [rot90],PAPER,55.8,Correct,PAPER,93.6,Correct,Same (correct)
+T09,Rotated 180°,PAPER,02-paper [rot180],PAPER,52.5,Correct,PAPER,85.6,Correct,Same (correct)
+T10,Low lighting,PAPER,02-paper [dark],PAPER,99.6,Correct,PAPER,99.7,Correct,Same (correct)
+T11,Complex background,PAPER,02-paper [busy],PAPER,82.2,Correct,PAPER,94.2,Correct,Same (correct)
+T12,Increased distance,PAPER,02-paper [far],PAPER,84.4,Correct,ALUMINUM CAN,54.3,Wrong,Regressed
+T13,Upright,PLASTIC BOTTLE,01-plastic-bottle [upright],PLASTIC BOTTLE,100,Correct,PLASTIC BOTTLE,100,Correct,Same (correct)
+T14,Rotated 90°,PLASTIC BOTTLE,01-plastic-bottle [rot90],PLASTIC BOTTLE,95.2,Correct,PLASTIC BOTTLE,88.2,Correct,Same (correct)
+T15,Rotated 180°,PLASTIC BOTTLE,01-plastic-bottle [rot180],PLASTIC BOTTLE,97.7,Correct,PLASTIC BOTTLE,95.9,Correct,Same (correct)
+T16,Low lighting,PLASTIC BOTTLE,01-plastic-bottle [dark],PLASTIC BOTTLE,99.4,Correct,PLASTIC BOTTLE,99.4,Correct,Same (correct)
+T17,Complex background,PLASTIC BOTTLE,01-plastic-bottle [busy],PLASTIC BOTTLE,98.1,Correct,PLASTIC BOTTLE,94.2,Correct,Same (correct)
+T18,Increased distance,PLASTIC BOTTLE,01-plastic-bottle [far],PAPER,77.1,Wrong,PLASTIC BOTTLE,52.5,Correct,Improved
+T19,Upright,PLASTIC BOTTLE,02-plastic-bottle [upright],PLASTIC BOTTLE,55.4,Correct,PLASTIC BOTTLE,84.6,Correct,Same (correct)
+T20,Rotated 90°,PLASTIC BOTTLE,02-plastic-bottle [rot90],PAPER,62.4,Wrong,PLASTIC BOTTLE,79.7,Correct,Improved
+T21,Rotated 180°,PLASTIC BOTTLE,02-plastic-bottle [rot180],PLASTIC BOTTLE,93.8,Correct,PLASTIC BOTTLE,99.3,Correct,Same (correct)
+T22,Low lighting,PLASTIC BOTTLE,02-plastic-bottle [dark],PAPER,94,Wrong,PLASTIC BOTTLE,63.7,Correct,Improved
+T23,Complex background,PLASTIC BOTTLE,02-plastic-bottle [busy],PAPER,86.2,Wrong,PAPER,84.7,Wrong,Same (wrong)
+T24,Increased distance,PLASTIC BOTTLE,02-plastic-bottle [far],ALUMINUM CAN,78.9,Wrong,ALUMINUM CAN,93,Wrong,Same (wrong)
+T25,Upright,ALUMINUM CAN,01-aluminum-can [upright],ALUMINUM CAN,99.9,Correct,ALUMINUM CAN,100,Correct,Same (correct)
+T26,Rotated 90°,ALUMINUM CAN,01-aluminum-can [rot90],ALUMINUM CAN,99.7,Correct,ALUMINUM CAN,99.9,Correct,Same (correct)
+T27,Rotated 180°,ALUMINUM CAN,01-aluminum-can [rot180],ALUMINUM CAN,99.9,Correct,ALUMINUM CAN,100,Correct,Same (correct)
+T28,Low lighting,ALUMINUM CAN,01-aluminum-can [dark],ALUMINUM CAN,99.2,Correct,ALUMINUM CAN,99.9,Correct,Same (correct)
+T29,Complex background,ALUMINUM CAN,01-aluminum-can [busy],ALUMINUM CAN,96.4,Correct,ALUMINUM CAN,97.7,Correct,Same (correct)
+T30,Increased distance,ALUMINUM CAN,01-aluminum-can [far],ALUMINUM CAN,90,Correct,ALUMINUM CAN,99.6,Correct,Same (correct)
+T31,Upright,ALUMINUM CAN,02-aluminum-can [upright],ALUMINUM CAN,99.9,Correct,ALUMINUM CAN,100,Correct,Same (correct)
+T32,Rotated 90°,ALUMINUM CAN,02-aluminum-can [rot90],ALUMINUM CAN,99,Correct,ALUMINUM CAN,98.3,Correct,Same (correct)
+T33,Rotated 180°,ALUMINUM CAN,02-aluminum-can [rot180],ALUMINUM CAN,97.2,Correct,ALUMINUM CAN,99.1,Correct,Same (correct)
+T34,Low lighting,ALUMINUM CAN,02-aluminum-can [dark],ALUMINUM CAN,98.6,Correct,ALUMINUM CAN,99.6,Correct,Same (correct)
+T35,Complex background,ALUMINUM CAN,02-aluminum-can [busy],ALUMINUM CAN,93.6,Correct,ALUMINUM CAN,97.7,Correct,Same (correct)
+T36,Increased distance,ALUMINUM CAN,02-aluminum-can [far],PAPER,92.6,Wrong,ALUMINUM CAN,60.2,Correct,Improved

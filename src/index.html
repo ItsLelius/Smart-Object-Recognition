@@ -11,7 +11,7 @@
 </head>
 <body>
   <header class="topbar">
-    <span class="nav-title">ICS 106 · Laboratory 02</span>
+    <span class="nav-title">ICS 106 · Laboratory 10</span>
     <span class="tag" id="headerTag">No model active</span>
   </header>
 
@@ -27,17 +27,17 @@
         <div class="model-card">
           <div class="model-title"><span class="ver">V1</span><span class="role">Baseline</span><span class="dot" aria-hidden="true"></span></div>
           <label for="urlV1" class="sr">V1 model URL</label>
-          <input id="urlV1" type="url" placeholder="https://teachablemachine.withgoogle.com/models/…/" autocomplete="off">
+          <input id="urlV1" type="text" placeholder="https://teachablemachine.withgoogle.com/models/…/" autocomplete="off">
           <button id="loadV1" type="button">Load V1</button>
         </div>
         <div class="model-card">
           <div class="model-title"><span class="ver">V2</span><span class="role">Improved</span><span class="dot" aria-hidden="true"></span></div>
           <label for="urlV2" class="sr">V2 model URL</label>
-          <input id="urlV2" type="url" placeholder="https://teachablemachine.withgoogle.com/models/…/" autocomplete="off">
+          <input id="urlV2" type="text" placeholder="https://teachablemachine.withgoogle.com/models/…/" autocomplete="off">
           <button id="loadV2" type="button">Load V2</button>
         </div>
       </div>
-      <p id="modelInfo" class="fine">No model loaded</p>
+      <p id="modelInfo" class="fine">No model loaded. Load V1 and V2 both: every classification then runs on both models with the same image. A Teachable Machine link or a local folder like <code>models/v1/</code> both work.</p>
     </section>
 
     <div class="bench">
@@ -61,6 +61,7 @@
           <span class="fine">Highest-scoring class</span>
           <strong id="topClass">—</strong>
           <span id="topConfidence">—</span>
+          <span id="compare" class="fine"></span>
         </div>
         <div id="warning" class="warning" role="alert" hidden></div>
         <div id="predictions" aria-live="polite"><p class="fine">Predictions will appear after classification.</p></div>
@@ -73,7 +74,7 @@
 
     <section class="variantbox" aria-labelledby="var-heading">
       <h2 id="var-heading"><span class="step">4</span>Check all conditions</h2>
-      <p class="fine">Makes six versions of the chosen image and classifies each with the active model. The versions are generated the same way every time, so V1 and V2 see identical inputs.</p>
+      <p class="fine">Makes six versions of the chosen image and classifies each with every loaded model. The versions are generated the same way every time, so V1 and V2 see identical inputs.</p>
       <div class="var-controls">
         <div class="field"><span class="lbl">Actual class</span><select id="varActual" disabled></select></div>
         <button type="button" id="varBtn" disabled>Test all conditions</button>
@@ -88,10 +89,11 @@
 
     <section class="logbox" aria-labelledby="log-heading">
       <h2 id="log-heading"><span class="step">5</span>Record the test</h2>
-      <p class="fine">Set the real class and condition, then record. Recording the same image and version again replaces the earlier entry.</p>
+      <p class="fine">Set the real class and condition, then record. With both models loaded, one click saves V1 and V2 side by side. Recording the same image again updates its row.</p>
       <div class="log-form">
         <div class="field"><span class="lbl">Actual class</span><select id="actualClass" disabled></select></div>
         <div class="field"><span class="lbl">Condition</span><select id="condition">
+            <option value="">Select condition</option>
             <option>Upright</option><option>Rotated 90°</option><option>Rotated 180°</option>
             <option>Low lighting</option><option>Complex background</option><option>Increased distance</option>
           </select></div>
@@ -101,16 +103,34 @@
         <div id="summary" class="summary"></div>
         <div class="table-wrap">
           <table id="logTable">
-            <thead><tr><th>Image</th><th>Condition</th><th>Version</th><th>Actual</th><th>Predicted</th><th>Conf.</th><th>Result</th></tr></thead>
+            <thead><tr><th>Image</th><th>Actual</th><th>V1</th><th>V2</th><th>Change</th><th><span class="sr">Remove</span></th></tr></thead>
             <tbody id="logBody"></tbody>
           </table>
         </div>
       </div>
       <div class="actions">
-        <button type="button" id="exportBtn">Export CSV</button>
+        <button type="button" id="exportBtn">Export comparison</button>
+        <button type="button" id="exportV1Btn" class="secondary">Export V1</button>
+        <button type="button" id="exportV2Btn" class="secondary">Export V2</button>
         <button type="button" id="clearBtn" class="secondary">Clear log</button>
       </div>
     </section>
+
+    <section class="webcambox" aria-labelledby="cam-heading">
+      <h2 id="cam-heading"><span class="step">6</span>Webcam recognition</h2>
+      <p class="fine">Live classification with the active model. This is for demonstration only; use image upload for the V1 and V2 comparison.</p>
+      <div class="cam-layout">
+        <video id="cam" class="cam" playsinline muted></video>
+        <div class="cam-out">
+          <strong id="camTop" class="cam-top">—</strong>
+          <p id="camScores" class="fine"></p>
+          <div id="camWarning" class="warning" role="alert" hidden></div>
+          <div class="actions"><button type="button" id="camBtn">Start webcam</button></div>
+          <p id="camStatus" class="fine" role="status" aria-live="polite">Load a model, then start the webcam.</p>
+        </div>
+      </div>
+    </section>
+
 
     <footer>
       <p>Use the same 36 images for V1 and V2. Never retrain on these reserved evaluation images.</p>
